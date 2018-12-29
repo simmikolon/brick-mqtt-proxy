@@ -1855,9 +1855,12 @@ if __name__ == '__main__':
     if len(global_topic_prefix) > 0 and not global_topic_prefix.endswith('/'):
         global_topic_prefix += '/'
 
-    proxy = Proxy(args.brickd_host, args.brickd_port, args.broker_host,
-                  args.broker_port, args.broker_username, args.broker_password,
-                  args.broker_certificate, args.broker_tls_insecure,
-                  args.update_interval, global_topic_prefix)
+    try:
+        proxy = Proxy(args.brickd_host, args.brickd_port, args.broker_host,
+                      args.broker_port, args.broker_username, args.broker_password,
+                      args.broker_certificate, args.broker_tls_insecure,
+                      args.update_interval, global_topic_prefix)
 
-    proxy.connect()
+        proxy.connect()
+    except Exception as e:
+        print e
