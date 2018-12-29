@@ -1863,4 +1863,4 @@ if __name__ == '__main__':
 
         proxy.connect()
     except Exception as e:
-        print e
+        print(e)
