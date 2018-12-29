@@ -21,7 +21,7 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 Boston, MA 02111-1307, USA.
 """
 
-import OS
+import os
 
 BRICKD_HOST = os.getenv('BRICKD_HOST', 'localhost')
 BRICKD_PORT = os.getenv('BRICKD_PORT', 4223)
