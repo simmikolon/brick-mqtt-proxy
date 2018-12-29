@@ -21,13 +21,15 @@ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 Boston, MA 02111-1307, USA.
 """
 
-BRICKD_HOST = 'localhost'
-BRICKD_PORT = 4223
-BROKER_HOST = 'localhost'
-BROKER_PORT = 1883 # 8883 for TLS
+import OS
+
+BRICKD_HOST = os.getenv('BRICKD_HOST', 'localhost')
+BRICKD_PORT = os.getenv('BRICKD_PORT', 4223)
+BROKER_HOST = os.getenv('BROKER_HOST', 'localhost')
+BROKER_PORT = os.getenv('BROKER_PORT', 1883) # 8883 for TLS
 GLOBAL_TOPIC_PREFIX = 'tinkerforge/'
-UPDATE_INTERVAL = 3.0 # seconds
-ENUMERATE_INTERVAL = 15.0 # seconds
+UPDATE_INTERVAL = os.getenv('UPDATE_INTERVAL', 2.0) # seconds
+ENUMERATE_INTERVAL = os.getenv('ENUMERATE_INTERVAL', 15.0) # seconds
 
 import argparse
 import json
